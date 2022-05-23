@@ -1,0 +1,23 @@
+(setq n (read));posição do número primo
+
+(defun primo (num);verifica se um número n é primo ou não
+(setq cont 0)
+
+(loop for x from 1 to num do
+
+(if (= (mod num x) 0) (incf cont 1)))
+
+(if (= cont 2) (return-from primo 1))
+(if (/= cont 2) (return-from primo 0)))
+;fim da função primo
+
+(defun primo_nth (num);enésimo número primo
+(setq cont1 0)
+
+(loop for x from 2 to 1000 do
+
+(if (= (primo x) 1) (incf cont1 1))
+(if (= cont1 num) (return-from primo_nth x))))
+;fim da função primo_nth
+
+(format t "O número primo na posição ~Dº é: ~D" n (primo_nth n))
