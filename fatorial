@@ -1,0 +1,16 @@
+(setq n (read))
+
+(defun fatorial (num);função para calcular o fatorial
+
+(if (< num 2)
+
+  ;then
+  (return-from fatorial 1);fim then
+
+  ;else
+  (* num (fatorial (- num 1)));fim else
+  
+  );fim if
+);fim function
+
+(format t "O resultado de ~D! é: ~D" n (fatorial n))
